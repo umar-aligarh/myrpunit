@@ -1,4 +1,5 @@
 import * as dotenv from "dotenv";
+import express from 'express';
 dotenv.config()
 
 // Connecting Database with the app
