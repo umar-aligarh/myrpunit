@@ -12,7 +12,7 @@ app.use(express.urlencoded(
 ));
 
 //Router import 
-import studentRouter from ".backend/src/routes/Student.router.js"
+import studentRouter from "./backend/src/routes/Student.router.js"
 
 app.use("/",studentRouter);
 app.use("/resultFetched",studentRouter);
