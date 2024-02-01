@@ -29,6 +29,10 @@ dbConnect().then(()=>{
     console.log("MONGODB connection failed");
 })
 
+
+
+export default app
+
 app.get("*", function (_, res) {
   res.sendFile(
     path.join(__dirname, "/frontend/build/index.html"),
@@ -39,6 +43,4 @@ app.get("*", function (_, res) {
     }
   );
 });
-
-export default app
 // Running the controller 
