@@ -1,1 +1,1 @@
-export const DB_NAME = "rpunit"
+export const DB_NAME = "myrpunit"
