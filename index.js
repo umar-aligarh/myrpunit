@@ -3,7 +3,7 @@ dotenv.config()
 
 // Connecting Database with the app
 
-import dbConnect from ".backend/src/db/index.js";
+import dbConnect from "./backend/src/db/index.js";
 import app from "./app.js";
 
 const port = process.env.PORT || 5000;
