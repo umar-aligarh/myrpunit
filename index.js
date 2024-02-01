@@ -19,7 +19,7 @@ const port = process.env.PORT || 5000;
 //     reqHTML(en, fac);
 //     res.send("hello world");
 // });
-app.get("/", function (_, res) {
+app.get("*", function (_, res) {
   res.sendFile(
     path.join(__dirname, "/frontend/index.html"),
     function (err) {
