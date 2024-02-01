@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import path from 'path';
 
 const app = express();
 
@@ -14,7 +15,11 @@ app.use(express.urlencoded(
 //Router import 
 import studentRouter from "./backend/src/routes/Student.router.js"
 
+app.use(express.static(path.join(__dirname, "./frontend/build")));
 app.use("/",studentRouter);
 app.use("/resultFetched",studentRouter);
+
+
+
 
 export default app;
