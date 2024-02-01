@@ -15,7 +15,7 @@ app.use(express.urlencoded(
 //Router import 
 import studentRouter from "./backend/src/routes/Student.router.js"
 
-app.use(express.static(path.join(__dirname, "/frontend/build")));
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
 app.use("/",studentRouter);
 app.use("/resultFetched",studentRouter);
 
