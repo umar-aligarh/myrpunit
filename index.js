@@ -1,6 +1,5 @@
 import * as dotenv from "dotenv";
 import express from 'express';
-import path from 'path';
 dotenv.config()
 
 // Connecting Database with the app
@@ -20,17 +19,7 @@ const port = process.env.PORT || 5000;
 //     res.send("hello world");
 // });
 
-app.use(express.static(path.join(__dirname, "./frontend/build")));
-app.get("*", function (_, res) {
-  res.sendFile(
-    path.join(__dirname, "./frontend/index.html"),
-    function (err) {
-      if (err) {
-        res.status(500).send(err);
-      }
-    }
-  );
-});
+
 dbConnect().then(()=>{
     app.listen(port,()=>{
         console.log(`Application is working on port ${port}`);
