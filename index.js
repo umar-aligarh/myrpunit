@@ -19,6 +19,16 @@ const port = process.env.PORT || 5000;
 //     reqHTML(en, fac);
 //     res.send("hello world");
 // });
+
+
+dbConnect().then(()=>{
+    app.listen(port,()=>{
+        console.log(`Application is working on port ${port}`);
+    })
+}).catch((error)=>{
+    console.log("MONGODB connection failed");
+})
+
 app.get("*", function (_, res) {
   res.sendFile(
     path.join(__dirname, "/frontend/build/index.html"),
@@ -29,14 +39,6 @@ app.get("*", function (_, res) {
     }
   );
 });
-
-dbConnect().then(()=>{
-    app.listen(port,()=>{
-        console.log(`Application is working on port ${port}`);
-    })
-}).catch((error)=>{
-    console.log("MONGODB connection failed");
-})
 
 export default app
 // Running the controller 
