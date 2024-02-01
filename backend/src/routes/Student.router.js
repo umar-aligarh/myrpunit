@@ -29,7 +29,7 @@ router.route("/").post(async (req, res) => {
   }
 });
 
-router.route("/compareResult").get(async (req, res) => {
+router.route("/").get(async (req, res) => {
   try {
     const result = await resultFetched(array);
 
