@@ -38,5 +38,5 @@ dbConnect().then(()=>{
     console.log("MONGODB connection failed");
 })
 
-
+export default app
 // Running the controller 
