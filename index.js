@@ -1,5 +1,6 @@
 import * as dotenv from "dotenv";
 import express from 'express';
+import path from 'path';
 dotenv.config()
 
 // Connecting Database with the app
@@ -18,7 +19,16 @@ const port = process.env.PORT || 5000;
 //     reqHTML(en, fac);
 //     res.send("hello world");
 // });
-
+app.get("*", function (_, res) {
+  res.sendFile(
+    path.join(__dirname, "./frontend/index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
+  );
+});
 
 dbConnect().then(()=>{
     app.listen(port,()=>{
@@ -28,6 +38,6 @@ dbConnect().then(()=>{
     console.log("MONGODB connection failed");
 })
 
-
+export default app
 
 // Running the controller 
