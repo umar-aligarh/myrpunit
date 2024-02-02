@@ -9,7 +9,7 @@ import dbConnect from "./backend/src/db/index.js";
 import app from "./app.js";
 
 const port = process.env.PORT || 5000;
-
+const __dirname = path.resolve();
 
 // app.post("/", async (req, res) => {
 //     const { en, fac } = req.body;
